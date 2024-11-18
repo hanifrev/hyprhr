@@ -1,4 +1,4 @@
-Faishal Hanif test
+Faishal Hanif:
 hanifrev@gmail.com
 
 To run locally, clone this repo and install it:
