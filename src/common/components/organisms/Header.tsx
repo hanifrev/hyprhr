@@ -1,13 +1,30 @@
 'use client';
 
 import Image from 'next/image';
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Buttons from '../atoms/Buttons';
 import { Dropdown } from '../atoms/Dropdown';
 
 const Header = () => {
   const [openDropdown, setOpenDropdown] = useState(false);
   const [dropdownValue, setDropdownValue] = useState('채용');
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
+  const handleClickOutside = (event: MouseEvent) => {
+    if (
+      dropdownRef.current &&
+      !dropdownRef.current.contains(event.target as Node)
+    ) {
+      setOpenDropdown(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
 
   const dropdownItems = [
     {
@@ -50,7 +67,7 @@ const Header = () => {
       <div className="hidden xl:flex flex-row w-[1200px] py-5 justify-between items-center">
         <Image src="/logo.svg" alt="logo" width={114} height={21} />
         <div className="text-white text-base font-black flex gap-[60px]">
-          <span className="flex gap-2 items-center">
+          <span className="flex gap-2 items-center ">
             <span>{dropdownValue}</span>
             <Image
               src="/chev-down.svg"
@@ -60,7 +77,11 @@ const Header = () => {
               height={16}
               onClick={() => setOpenDropdown(!openDropdown)}
             />
-            {openDropdown && <Dropdown items={dropdownItems} />}
+            {openDropdown && (
+              <div ref={dropdownRef} className="absolute top-[-50px] w-full">
+                <Dropdown items={dropdownItems} />
+              </div>
+            )}
           </span>
           <span>해외 개발자 활용 서비스</span>
         </div>

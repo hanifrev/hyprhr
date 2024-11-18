@@ -23,7 +23,7 @@ const MainPage: React.FC<MainProps> = ({ data }) => {
     <div className="z-50 mx-auto side-container pt-14 xl:pt-[100px] pb-[60px] xl:pb-[108px] xl:!px-0 xl:w-[1200px]">
       <div className="flex flex-col xl:flex-row gap-9 ">
         <div className="flex flex-col gap-4 lg:w-[581px]">
-          {isWideViewport ? (
+          <div className="hidden lg:block">
             <Tooltips
               position="left"
               text="풀타임, 파트타임"
@@ -31,7 +31,8 @@ const MainPage: React.FC<MainProps> = ({ data }) => {
               background="bg-white"
               arrowColor="#FFF"
             />
-          ) : (
+          </div>
+          <div className="block lg:hidden">
             <Tooltips
               position="left"
               text="풀타임, 파트타임"
@@ -39,7 +40,7 @@ const MainPage: React.FC<MainProps> = ({ data }) => {
               background="bg-[#8BC4FF]"
               arrowColor="#8BC4FF"
             />
-          )}
+          </div>
 
           {/* title */}
           <div className="text-white font-black text-4xl leading-[130%] animate-fadeInUp">

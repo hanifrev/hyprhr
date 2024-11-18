@@ -65,8 +65,8 @@ const NavigationArrows = ({ carouselRef }: ArrowProps) => (
       style={{
         position: 'absolute',
         top: '50%',
-        left: '-10px',
-        zIndex: 10,
+        left: '15px',
+        zIndex: 999,
         cursor: 'pointer',
       }}
       onClick={() => carouselRef.current?.goBack()}
@@ -77,8 +77,8 @@ const NavigationArrows = ({ carouselRef }: ArrowProps) => (
       style={{
         position: 'absolute',
         top: '50%',
-        right: '-10px',
-        zIndex: 10,
+        right: '20px',
+        zIndex: 999,
         cursor: 'pointer',
       }}
       onClick={() => carouselRef.current?.goNext()}
