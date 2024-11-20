@@ -4,7 +4,9 @@ import { mainPageType } from '@/modules/MainPage/types/mainPage.models';
 const BASE_URL = process.env.NEXT_PUBLIC_BASE_API_URL;
 
 const getData = async () => {
-  const response = await fetch(`${BASE_URL}/api/mainPage`);
+  const response = await fetch(`${BASE_URL}/api/mainPage`, {
+    cache: 'no-store',
+  });
 
   if (!response.ok) {
     throw new Error('ERROR while getting data');
