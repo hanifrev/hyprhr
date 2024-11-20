@@ -51,7 +51,7 @@ const MainPage: React.FC<MainProps> = ({ data }) => {
           <div className="text-[#FFFFFFCC] font-black text-lg leading-[27px] animate-fadeInUp delay-[300ms]">
             {theData.description}
           </div>
-          <div className="text-[#FFFFFFCC] hidden xl:block pt-2 text-base font-black underline leading-normal">
+          <div className="text-[#FFFFFFCC] hidden xl:block pt-2 text-base font-black underline leading-normal cursor-pointer">
             {theData.question}
           </div>
           {/* 3 small info card desktop only*/}
