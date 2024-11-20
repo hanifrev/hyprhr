@@ -46,4 +46,5 @@ body {
 .cards-wrapper {
   display: flex;
   transition: transform 0.8s ease-in-out;
+  width: 100vw !important;
 }

@@ -15,9 +15,7 @@ interface MainProps {
 }
 
 const MainPage: React.FC<MainProps> = ({ data }) => {
-  console.log(data);
   const theData = data && data;
-  const isWideViewport = useMediaQuery({ query: '(min-width: 1024px)' });
 
   return (
     <div className="z-50 mx-auto side-container pt-14 xl:pt-[100px] pb-[60px] xl:pb-[108px] xl:!px-0 xl:w-[1200px]">
@@ -43,8 +41,11 @@ const MainPage: React.FC<MainProps> = ({ data }) => {
           </div>
 
           {/* title */}
-          <div className="text-white font-black text-4xl leading-[130%] animate-fadeInUp">
-            {theData.title}
+          <div
+            className="text-white font-black text-4xl leading-[130%] animate-fadeInUp"
+            dangerouslySetInnerHTML={{ __html: theData.title }}
+          >
+            {/* {theData.title} */}
           </div>
           {/* description */}
           <div className="text-[#FFFFFFCC] font-black text-lg leading-[27px] animate-fadeInUp delay-[300ms]">

@@ -37,7 +37,7 @@ const BottomCardSlider: React.FC = () => {
   }, []);
 
   return (
-    <div className="slider-container overflow-hidden relative w-auto animate-fadeIn delay-[500ms]">
+    <div className="slider-container overflow-hidden relative w-auto animate-fadeIn delay-[500ms] xl:overflow-visible">
       <motion.div
         className="cards-wrapper flex"
         style={{

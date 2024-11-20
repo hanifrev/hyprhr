@@ -62,10 +62,11 @@ interface ArrowProps {
 const NavigationArrows = ({ carouselRef }: ArrowProps) => (
   <>
     <div
+      className="left-[-10px] md:left-[15px]"
       style={{
         position: 'absolute',
         top: '50%',
-        left: '15px',
+        // left: '15px',
         zIndex: 999,
         cursor: 'pointer',
       }}
@@ -74,10 +75,11 @@ const NavigationArrows = ({ carouselRef }: ArrowProps) => (
       <ArrowLeft />
     </div>
     <div
+      className="right-[-2px] md:right-5"
       style={{
         position: 'absolute',
         top: '50%',
-        right: '20px',
+        // right: '20px',
         zIndex: 999,
         cursor: 'pointer',
       }}
